@@ -20,20 +20,18 @@ platforms:
       intermediate_instructions:
         - RUN yum -y install lsof which systemd-sysv initscripts net-tools
 
-  - name: centos-6
-
 verifier:
   name: inspec
 
 suites:
   - name: dev
     run_list:
-      - recipe:[java::default]
+      - recipe[java::default]
     attributes: { 'java': { 'jdk_version': '11'} }
     driver_config:
       ports:
         - 8080:80
-    excludes: centos-6
+#    excludes: centos-6
 
   - name: prod
     driver:
@@ -44,4 +42,4 @@ suites:
     driver_config:
       ports:
         - 8081:80
-    includes: centos-6
+#    includes: centos-6
