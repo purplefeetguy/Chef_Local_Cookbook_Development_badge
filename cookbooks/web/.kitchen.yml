@@ -31,11 +31,7 @@ suites:
     driver_config:
       ports:
         - 8080:80
-<<<<<<< HEAD
     includes: centos-7
-=======
-#    excludes: centos-6
->>>>>>> d419cd5fb859137317649ed9b854a3fdc067637e
 
   - name: prod
     run_list:
@@ -44,8 +40,4 @@ suites:
     driver_config:
       ports:
         - 8081:80
-<<<<<<< HEAD
     includes: centos-7
-=======
-#    includes: centos-6
->>>>>>> d419cd5fb859137317649ed9b854a3fdc067637e
