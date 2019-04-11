@@ -23,6 +23,10 @@ describe 'web::default' do
       expect(chef_run).to install_package('httpd')
     end
 
+    it 'installs net-tools' do
+      expect(chef_run).to install_package('net-tools')
+    end
+
     it 'enables the httpd service' do
       expect(chef_run).to enable_service('httpd')
     end

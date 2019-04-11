@@ -15,6 +15,14 @@ describe 'web::users' do
       runner.converge(described_recipe)
     end
 
+    it 'creates the group' do
+      expect(chef_run).to create_group('developers')
+    end
+
+    it 'creates the user' do
+      expect(chef_run).to create_group('developers')
+    end
+
     it 'converges successfully' do
       expect { chef_run }.to_not raise_error
     end

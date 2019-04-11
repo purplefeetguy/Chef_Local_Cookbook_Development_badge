@@ -4,8 +4,16 @@
 #
 # Copyright:: 2019, DevOps Foot Locker, All Rights Reserved.
 
-['net-tools','httpd'].each do |pkg|
-  package 'pkg' do
-    action :install
-  end
+include_recipe 'web::users'
+
+package 'net-tools' do
+  action :install
+end
+
+package 'httpd' do
+  action :install
+end
+
+service 'httpd' do
+  action [:enable, :start]
 end
